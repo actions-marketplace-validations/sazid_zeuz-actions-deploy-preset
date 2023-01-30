@@ -1,7 +1,7 @@
 name: 'ZeuZ Actions - Deploy preset'
 description: 'Deploy a preset in ZeuZ server'
 branding:
-  icon: 'upload-cloud'
+  icon: 'cloud-lightning'
   color: 'red'
 inputs:
   zeuz_preset_webhook:
@@ -19,7 +19,7 @@ inputs:
   zeuz_runtime_parameters:
     description: 'a json array of key-value pairs, example: [{"Key": "user", "Value": 1}]'
     required: true
-    default: []
+    default: '[]'
 outputs:
   run_id: # output will be available to future steps
     description: 'runid of the deployment'
