@@ -30,7 +30,7 @@ async function run() {
     info(`Runtime parameters: ${JSON.stringify(runtimeParameters)}`);
 
     try {
-      const runId = await axios.post(webhook, {
+      const resp = await axios.post(webhook, {
         "nodeId": nodeId,
         "objective": objective,
         "version": version,
@@ -41,6 +41,7 @@ async function run() {
         }
       });
 
+      const runId = resp.data;
       info(`Successfully deployed, run id: ${runId}`);
       core.setOutput("run_id", runId);
     } catch (error) {
