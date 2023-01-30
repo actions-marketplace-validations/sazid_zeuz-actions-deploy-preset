@@ -16,7 +16,7 @@ function info(msg) {
 async function run() {
   try {
     // required inputs
-    const webhook = core.getInput('zeuz_server_host').trim();
+    const webhook = core.getInput('zeuz_preset_webhook').trim();
     const nodeId = core.getInput('zeuz_node_id').trim();
     const objective = core.getInput('zeuz_objective').trim();
     const version = core.getInput('zeuz_version').trim();
