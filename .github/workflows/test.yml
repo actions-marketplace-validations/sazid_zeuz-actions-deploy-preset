@@ -15,6 +15,7 @@ jobs:
       - uses: sazid/zeuz-actions-deploy-preset@v1.0
         with:
           zeuz_preset_webhook: ${{ secrets.ZEUZ_PRESET_WEBHOOK }}
+          zeuz_api_key: ${{ secrets.ZEUZ_API_KEY }}
           zeuz_node_id: ${{ vars.ZEUZ_NODE_ID }}
           zeuz_objective: ${{ vars.ZEUZ_OBJECTIVE }}
           zeuz_version: ${{ vars.ZEUZ_VERSION }}

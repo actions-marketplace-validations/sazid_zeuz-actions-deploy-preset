@@ -10288,6 +10288,7 @@ async function run() {
   try {
     // required inputs
     const webhook = core.getInput('zeuz_preset_webhook').trim();
+    const apiKey = core.getInput('zeuz_api_key').trim();
     const nodeId = core.getInput('zeuz_node_id').trim();
     const objective = core.getInput('zeuz_objective').trim();
     const version = core.getInput('zeuz_version').trim();
@@ -10305,6 +10306,10 @@ async function run() {
         "objective": objective,
         "version": version,
         "runtimeParameters": runtimeParameters,
+      }, {
+        headers: {
+          'X-API-KEY': apiKey,
+        }
       });
 
       info(`Successfully deployed, run id: ${runId}`);

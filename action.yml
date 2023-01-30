@@ -7,6 +7,9 @@ inputs:
   zeuz_preset_webhook:
     description: 'url of the preset webhook'
     required: true
+  zeuz_api_key:
+    description: 'api key to authenticate to zeuz'
+    required: true
   zeuz_node_id:
     description: 'node id (can be specified as a regex, first match will be picked)'
     required: true
