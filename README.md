@@ -1,19 +1,18 @@
-# ZeuZ GitHub Action - Upload attachment
-[![Test action](https://github.com/sazid/zeuz-actions-upload-attachment/actions/workflows/test.yml/badge.svg)](https://github.com/sazid/zeuz-actions-upload-attachment/actions/workflows/test.yml)
+# ZeuZ GitHub Action - Deploy preset
+[![Test action](https://github.com/sazid/zeuz-actions-deploy-preset/actions/workflows/test.yml/badge.svg)](https://github.com/sazid/zeuz-actions-deploy-preset/actions/workflows/test.yml)
 
 ## Usage
 
 ```yaml
-uses: sazid/zeuz-actions-upload-attachment@v1.0
+uses: sazid/zeuz-actions-deploy-preset@v1.0
 with:
-  zeuz_server_host: https://localhost
-  zeuz_api_key: ${{ secrets.ZEUZ_API_KEY }}
-  zeuz_attachment_type: global/test_case/step
-  zeuz_attachment_item_id: TEST-1234
-  zeuz_attachment_path: ./test.txt
-  zeuz_attachment_replace: true
+  zeuz_preset_webhook: ${{ secrets.ZEUZ_PRESET_WEBHOOK }}
+  zeuz_node_id: ${{ vars.ZEUZ_NODE_ID }}
+  zeuz_objective: ${{ vars.ZEUZ_OBJECTIVE }}
+  zeuz_version: ${{ vars.ZEUZ_VERSION }}
+  zeuz_runtime_parameters: ${{ vars.ZEUZ_RUNTIME_PARAMETERS }}
 ```
 
-**We highly recommend to put the api key in GitHub secrets**.
+**We highly recommend to put the preset webhook in GitHub secrets**.
 
-See the [actions tab](https://github.com/sazid/zeuz-actions-upload-attachment/actions) for runs of this action! :rocket:
+See the [actions tab](https://github.com/sazid/zeuz-actions-deploy-preset/actions) for runs of this action! :rocket:

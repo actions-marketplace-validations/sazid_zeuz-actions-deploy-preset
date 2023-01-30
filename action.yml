@@ -1,32 +1,28 @@
-name: 'ZeuZ Actions - Upload attachment'
-description: 'Uploads attachment to ZeuZ server'
+name: 'ZeuZ Actions - Deploy preset'
+description: 'Deploy a preset in ZeuZ server'
 branding:
   icon: 'upload-cloud'
   color: 'red'
 inputs:
-  zeuz_server_host:
-    description: 'host address of the zeuz server'
+  zeuz_preset_webhook:
+    description: 'url of the preset webhook'
     required: true
-  zeuz_api_key:
-    description: 'api key to authenticate to zeuz'
+  zeuz_node_id:
+    description: 'node id (can be specified as a regex, first match will be picked)'
     required: true
-  zeuz_attachment_type:
-    description: 'type of attachment, possible values: global, test_case, step'
+  zeuz_objective:
+    description: 'objective of the deployment'
     required: true
-  zeuz_attachment_item_id:
-    description: 'if test_case/step is selected as type, you must provide the id of the test case or step'
-    required: false
-    default: none
-  zeuz_attachment_path:
-    description: 'path to the attachment to upload attachment'
+  zeuz_version:
+    description: 'version of the deployment'
     required: true
-  zeuz_attachment_replace:
-    description: 'set true to replace existing attachment in place, otherwise false (default: true)'
+  zeuz_runtime_parameters:
+    description: 'a json array of key-value pairs, example: [{"Key": "user", "Value": 1}]'
     required: true
-    default: true
+    default: []
 outputs:
-  upload_success: # output will be available to future steps
-    description: 'Whether the upload was successful or not. Possible values: true, false'
+  run_id: # output will be available to future steps
+    description: 'runid of the deployment'
 runs:
   using: 'node16'
   main: 'dist/index.js'
